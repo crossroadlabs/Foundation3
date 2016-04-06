@@ -86,7 +86,8 @@
 				65A96CD91CA45E1E007878CE /* Foundation3Tests.swift */,
 				65A96CDB1CA45E1E007878CE /* Info.plist */,
 			);
-			path = Foundation3Tests;
+			name = Foundation3Tests;
+			path = Tests/Foundation3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,7 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Foundation3Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Foundation3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Foundation3Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,7 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Foundation3Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Foundation3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Foundation3Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
