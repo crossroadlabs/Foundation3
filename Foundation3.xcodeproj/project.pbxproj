@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		653D00E31CA4649300D43214 /* NSCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D00E21CA4649300D43214 /* NSCondition.swift */; };
+		659248261CB6A0B100368793 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659248251CB6A0B100368793 /* NSBundle.swift */; };
+		659248271CB6A0B500368793 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659248251CB6A0B100368793 /* NSBundle.swift */; };
+		659248281CB6A0B600368793 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659248251CB6A0B100368793 /* NSBundle.swift */; };
+		659248291CB6A0B600368793 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659248251CB6A0B100368793 /* NSBundle.swift */; };
 		6592CCA91CB5A15C0098F880 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592CCA81CB5A15C0098F880 /* String.swift */; };
 		6592D93E1CB69B7500E1650E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592CCA81CB5A15C0098F880 /* String.swift */; };
 		6592D93F1CB69B7600E1650E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592CCA81CB5A15C0098F880 /* String.swift */; };
@@ -53,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		653D00E21CA4649300D43214 /* NSCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCondition.swift; sourceTree = "<group>"; };
+		659248251CB6A0B100368793 /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
 		6592CCA81CB5A15C0098F880 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		65A96CCA1CA45E1E007878CE /* Foundation3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A96CCF1CA45E1E007878CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,8 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				65A96CCF1CA45E1E007878CE /* Info.plist */,
-				65A96CE41CA45EAE007878CE /* NSUUID.swift */,
+				659248251CB6A0B100368793 /* NSBundle.swift */,
 				653D00E21CA4649300D43214 /* NSCondition.swift */,
+				65A96CE41CA45EAE007878CE /* NSUUID.swift */,
 				6592CCA81CB5A15C0098F880 /* String.swift */,
 			);
 			path = Foundation3;
@@ -440,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659248261CB6A0B100368793 /* NSBundle.swift in Sources */,
 				6592CCA91CB5A15C0098F880 /* String.swift in Sources */,
 				653D00E31CA4649300D43214 /* NSCondition.swift in Sources */,
 				65A96CE51CA45EAE007878CE /* NSUUID.swift in Sources */,
@@ -458,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659248271CB6A0B500368793 /* NSBundle.swift in Sources */,
 				6592D93E1CB69B7500E1650E /* String.swift in Sources */,
 				925CEBA71CB61DD7000AD550 /* NSCondition.swift in Sources */,
 				925CEBA61CB61DD4000AD550 /* NSUUID.swift in Sources */,
@@ -476,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659248281CB6A0B600368793 /* NSBundle.swift in Sources */,
 				6592D93F1CB69B7600E1650E /* String.swift in Sources */,
 				925CEBC61CB62014000AD550 /* NSCondition.swift in Sources */,
 				925CEBC51CB62014000AD550 /* NSUUID.swift in Sources */,
@@ -494,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659248291CB6A0B600368793 /* NSBundle.swift in Sources */,
 				6592D9401CB69B7800E1650E /* String.swift in Sources */,
 				925CEBD61CB620A9000AD550 /* NSCondition.swift in Sources */,
 				925CEBD51CB620A9000AD550 /* NSUUID.swift in Sources */,
