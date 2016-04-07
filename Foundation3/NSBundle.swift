@@ -16,8 +16,50 @@
 
 import Foundation
 
-public extension NSBundle {
-    public /*not inherited*/ convenience init(for aClass: Swift.AnyClass) {
-        self.init(forClass: aClass)
+#if swift(>=3.0)
+#else
+    
+    public extension NSBundle {
+        public /*not inherited*/ convenience init(for aClass: Swift.AnyClass) {
+            self.init(forClass: aClass)
+        }
     }
-}
+    
+    public extension NSBundle {
+        @objc(pathForResource3:ofType:inDirectory:)
+        public class func path(forResource name: String?, ofType ext: String?, inDirectory bundlePath: String) -> String? {
+            return self.pathForResource(name, ofType: ext, inDirectory: bundlePath)
+        }
+        
+        @objc(pathsForResourcesOfType3:inDirectory:)
+        public class func pathsForResources(ofType ext: String?, inDirectory bundlePath: String) -> [String] {
+            return self.pathsForResourcesOfType(ext, inDirectory: bundlePath)
+        }
+        
+        @objc(pathForResource3:ofType:)
+        public func path(forResource name: String?, ofType ext: String?) -> String? {
+            return self.pathForResource(name, ofType: ext)
+        }
+        
+        @objc(pathForResource3:ofType:inDirectory:)
+        public func path(forResource name: String?, ofType ext: String?, inDirectory subpath: String?) -> String? {
+            return self.pathForResource(name, ofType: ext, inDirectory: subpath)
+        }
+        
+        @objc(pathForResource3:ofType:inDirectory:forLocalization:)
+        public func path(forResource name: String?, ofType ext: String?, inDirectory subpath: String?, forLocalization localizationName: String?) -> String? {
+            return self.pathForResource(name, ofType: ext, inDirectory: subpath, forLocalization: localizationName)
+        }
+        
+        @objc(pathsForResourcesOfType3:inDirectory:)
+        public func pathsForResources(ofType ext: String?, inDirectory subpath: String?) -> [String] {
+            return self.pathsForResourcesOfType(ext, inDirectory: subpath)
+        }
+        
+        @objc(pathsForResourcesOfType3:inDirectory:forLocalization:)
+        public func pathsForResources(ofType ext: String?, inDirectory subpath: String?, forLocalization localizationName: String?) -> [String] {
+            return self.pathsForResourcesOfType(ext, inDirectory: subpath, forLocalization: localizationName)
+        }
+    }
+    
+#endif
