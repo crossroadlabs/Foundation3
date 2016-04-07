@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		653D00E31CA4649300D43214 /* NSCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D00E21CA4649300D43214 /* NSCondition.swift */; };
 		6592CCA91CB5A15C0098F880 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592CCA81CB5A15C0098F880 /* String.swift */; };
+		6592D93E1CB69B7500E1650E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592CCA81CB5A15C0098F880 /* String.swift */; };
+		6592D93F1CB69B7600E1650E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592CCA81CB5A15C0098F880 /* String.swift */; };
+		6592D9401CB69B7800E1650E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592CCA81CB5A15C0098F880 /* String.swift */; };
 		65A96CD51CA45E1E007878CE /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A96CCA1CA45E1E007878CE /* Foundation3.framework */; };
 		65A96CDA1CA45E1E007878CE /* Foundation3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96CD91CA45E1E007878CE /* Foundation3Tests.swift */; };
 		65A96CE51CA45EAE007878CE /* NSUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96CE41CA45EAE007878CE /* NSUUID.swift */; };
@@ -455,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6592D93E1CB69B7500E1650E /* String.swift in Sources */,
 				925CEBA71CB61DD7000AD550 /* NSCondition.swift in Sources */,
 				925CEBA61CB61DD4000AD550 /* NSUUID.swift in Sources */,
 			);
@@ -472,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6592D93F1CB69B7600E1650E /* String.swift in Sources */,
 				925CEBC61CB62014000AD550 /* NSCondition.swift in Sources */,
 				925CEBC51CB62014000AD550 /* NSUUID.swift in Sources */,
 			);
@@ -489,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6592D9401CB69B7800E1650E /* String.swift in Sources */,
 				925CEBD61CB620A9000AD550 /* NSCondition.swift in Sources */,
 				925CEBD51CB620A9000AD550 /* NSUUID.swift in Sources */,
 			);
@@ -876,6 +882,7 @@
 				925CEBA21CB61C88000AD550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		925CEBA31CB61C88000AD550 /* Build configuration list for PBXNativeTarget "Foundation3Tests-iOS" */ = {
 			isa = XCConfigurationList;
@@ -884,6 +891,7 @@
 				925CEBA51CB61C88000AD550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		925CEBBF1CB61ED2000AD550 /* Build configuration list for PBXNativeTarget "Foundation3-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -892,6 +900,7 @@
 				925CEBC11CB61ED2000AD550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		925CEBC21CB61ED2000AD550 /* Build configuration list for PBXNativeTarget "Foundation3Tests-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -900,6 +909,7 @@
 				925CEBC41CB61ED2000AD550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		925CEBD21CB62042000AD550 /* Build configuration list for PBXNativeTarget "Foundation3-watchOS" */ = {
 			isa = XCConfigurationList;
@@ -908,6 +918,7 @@
 				925CEBD41CB62042000AD550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
