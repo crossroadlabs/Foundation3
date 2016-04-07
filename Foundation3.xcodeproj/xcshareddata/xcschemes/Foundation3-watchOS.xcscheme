@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "925CEBCC1CB62042000AD550"
-               BuildableName = "Foundation3-watchOS.framework"
+               BuildableName = "Foundation3.framework"
                BlueprintName = "Foundation3-watchOS"
                ReferencedContainer = "container:Foundation3.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "925CEBCC1CB62042000AD550"
-            BuildableName = "Foundation3-watchOS.framework"
+            BuildableName = "Foundation3.framework"
             BlueprintName = "Foundation3-watchOS"
             ReferencedContainer = "container:Foundation3.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "925CEBCC1CB62042000AD550"
-            BuildableName = "Foundation3-watchOS.framework"
+            BuildableName = "Foundation3.framework"
             BlueprintName = "Foundation3-watchOS"
             ReferencedContainer = "container:Foundation3.xcodeproj">
          </BuildableReference>
