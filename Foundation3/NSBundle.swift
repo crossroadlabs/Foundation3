@@ -17,6 +17,45 @@
 import Foundation
 
 #if swift(>=3.0)
+    
+    #if os(Linux)
+        public extension NSBundle {
+            public /*not inherited*/ convenience init(for aClass: Swift.AnyClass) {
+                self.init(forClass: aClass)
+            }
+        }
+    
+        public extension NSBundle {
+            public class func path(forResource name: String?, ofType ext: String?, inDirectory bundlePath: String) -> String? {
+                return self.pathForResource(name, ofType: ext, inDirectory: bundlePath)
+            }
+    
+            public class func pathsForResources(ofType ext: String?, inDirectory bundlePath: String) -> [String] {
+                return self.pathsForResourcesOfType(ext, inDirectory: bundlePath)
+            }
+    
+            public func path(forResource name: String?, ofType ext: String?) -> String? {
+                return self.pathForResource(name, ofType: ext)
+            }
+    
+            public func path(forResource name: String?, ofType ext: String?, inDirectory subpath: String?) -> String? {
+                return self.pathForResource(name, ofType: ext, inDirectory: subpath)
+            }
+    
+            public func path(forResource name: String?, ofType ext: String?, inDirectory subpath: String?, forLocalization localizationName: String?) -> String? {
+                return self.pathForResource(name, ofType: ext, inDirectory: subpath, forLocalization: localizationName)
+            }
+    
+            public func pathsForResources(ofType ext: String?, inDirectory subpath: String?) -> [String] {
+                return self.pathsForResourcesOfType(ext, inDirectory: subpath)
+            }
+    
+            public func pathsForResources(ofType ext: String?, inDirectory subpath: String?, forLocalization localizationName: String?) -> [String] {
+                return self.pathsForResourcesOfType(ext, inDirectory: subpath, forLocalization: localizationName)
+            }
+        }
+    #endif
+    
 #else
     
     public extension NSBundle {
