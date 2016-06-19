@@ -1,4 +1,4 @@
-//===--- NSUUID.swift -----------------------------------------------------===//
+//===--- UUID.swift -------------------------------------------------------===//
 //Copyright (c) 2016 Daniel Leping (dileping)
 //
 //Licensed under the Apache License, Version 2.0 (the "License");
