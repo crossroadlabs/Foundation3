@@ -18,22 +18,26 @@ import Foundation
 
 #if swift(>=3.0) && !os(Linux)
 #else
-    public extension NSUUID {
+    public typealias UUID = NSUUID
+    public typealias uuid_t = UnsafePointer<UInt8>
+    
+    public extension UUID {
         public convenience init?(uuidString string: String) {
             self.init(UUIDString: string)
         }
         
-        /* Create an NSUUID with the given bytes */
-        public convenience init(uuidBytes bytes: UnsafePointer<UInt8>) {
-            self.init(UUIDBytes: bytes)
+        /* Create an UUID with the given bytes */
+        public convenience init(uuid: uuid_t) {
+            self.init(UUIDBytes: uuid)
         }
         
-        
-        /* Get the individual bytes of the receiver */
-        public func getBytes(uuid: UnsafeMutablePointer<UInt8>) {
-            self.getUUIDBytes(uuid)
+        public var uuid: uuid_t {
+            get {
+                let temp = UnsafeMutablePointer<UInt8>.alloc(16)
+                self.getUUIDBytes(temp)
+                return uuid_t(temp)
+            }
         }
-        
         
         /* Return a string description of the UUID, such as "E621E1F8-C36C-495A-93FC-0C247A3E6E5F" */
         public var uuidString: String {

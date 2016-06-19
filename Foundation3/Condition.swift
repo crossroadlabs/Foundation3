@@ -18,8 +18,10 @@ import Foundation
 
 #if swift(>=3.0) && !os(Linux)
 #else
-    public extension NSCondition {
-        public func wait(until limit: NSDate) -> Bool {
+    public typealias Condition = NSCondition
+    
+    public extension Condition {
+        public func wait(until limit: Date) -> Bool {
             return self.waitUntilDate(limit)
         }
     }
