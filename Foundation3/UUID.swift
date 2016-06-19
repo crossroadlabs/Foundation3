@@ -19,7 +19,7 @@ import Foundation
 #if swift(>=3.0) && !os(Linux)
 #else
     public typealias UUID = NSUUID
-    public typealias uuid_t = UnsafePointer<UInt8>
+    public typealias uuid_t = [UInt8]
     
     public extension UUID {
         public convenience init?(uuidString string: String) {
@@ -33,9 +33,9 @@ import Foundation
         
         public var uuid: uuid_t {
             get {
-                let temp = UnsafeMutablePointer<UInt8>.alloc(16)
-                self.getUUIDBytes(temp)
-                return uuid_t(temp)
+                var temp = [UInt8](count: 16, repeatedValue: 0)
+                self.getUUIDBytes(&temp)
+                return temp
             }
         }
         
