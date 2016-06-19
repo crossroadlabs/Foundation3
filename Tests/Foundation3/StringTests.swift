@@ -21,3 +21,13 @@ class StringTests: XCTestCase {
     }
     
 }
+
+#if os(Linux)
+extension StringTests {
+	static var allTests : [(String, (StringTests) -> () throws -> Void)] {
+		return [
+			("testDataUsingEncoding", testDataUsingEncoding),
+		]
+	}
+}
+#endif

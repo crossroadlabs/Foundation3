@@ -20,47 +20,27 @@ import Foundation
     
     #if os(Linux)
         public typealias Bundle = NSBundle
-        
+
         public extension Bundle {
             public /*not inherited*/ convenience init(for aClass: Swift.AnyClass) {
                 self.init(forClass: aClass)
             }
-            
+
             public class func main() -> Bundle {
                 return self.mainBundle()
             }
         }
-    
+
         public extension Bundle {
-            
-//            public class func path(forResource name: String?, ofType ext: String?, inDirectory bundlePath: String) -> String? {
-//                return self.pathForResource(name, ofType: ext, inDirectory: bundlePath)
-//            }
-//    
-//            public class func pathsForResources(ofType ext: String?, inDirectory bundlePath: String) -> [String] {
-//                return self.pathsForResourcesOfType(ext, inDirectory: bundlePath)
-//            }
-//    
-//            public func path(forResource name: String?, ofType ext: String?) -> String? {
-//                return self.pathForResource(name, ofType: ext)
-//            }
-//    
-//            public func path(forResource name: String?, ofType ext: String?, inDirectory subpath: String?) -> String? {
-//                return self.pathForResource(name, ofType: ext, inDirectory: subpath)
-//            }
-//    
-//            public func path(forResource name: String?, ofType ext: String?, inDirectory subpath: String?, forLocalization localizationName: String?) -> String? {
-//                return self.pathForResource(name, ofType: ext, inDirectory: subpath, forLocalization: localizationName)
-//            }
-            
+
             public class func pathsForResources(ofType ext: String?, inDirectory subpath: String) -> [String] {
                 return self.pathsForResourcesOfType(ext, inDirectory: subpath)
             }
-    
+
             public func pathsForResources(ofType ext: String?, inDirectory subpath: String?) -> [String] {
                 return self.pathsForResourcesOfType(ext, inDirectory: subpath)
             }
-    
+
             public func pathsForResources(ofType ext: String?, inDirectory subpath: String?, forLocalization localizationName: String?) -> [String] {
                 return self.pathsForResourcesOfType(ext, inDirectory: subpath, forLocalization: localizationName)
             }

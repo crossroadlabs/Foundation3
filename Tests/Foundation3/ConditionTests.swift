@@ -17,7 +17,17 @@ class ConditionTests: XCTestCase {
     func testWait() {
         let cond = Condition()
         cond.signal()
-        cond.wait(until: Date())
+        let _ = cond.wait(until: Date())
     }
     
 }
+
+#if os(Linux)
+extension ConditionTests {
+	static var allTests : [(String, (ConditionTests) -> () throws -> Void)] {
+		return [
+			("testWait", testWait),
+		]
+	}
+}
+#endif

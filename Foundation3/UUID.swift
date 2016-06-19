@@ -15,6 +15,7 @@
 //===----------------------------------------------------------------------===//
 
 import Foundation
+import Boilerplate
 
 #if swift(>=3.0) && !os(Linux)
 #else
@@ -33,7 +34,7 @@ import Foundation
         
         public var uuid: uuid_t {
             get {
-                let temp = UnsafeMutablePointer<UInt8>.alloc(16)
+                let temp = UnsafeMutablePointer<UInt8>(allocatingCapacity: 16)
                 self.getUUIDBytes(temp)
                 return uuid_t(temp)
             }

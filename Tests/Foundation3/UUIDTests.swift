@@ -27,3 +27,13 @@ class UUIDTests: XCTestCase {
         XCTAssert(uuid2.uuidString.lowercased() == "4f84831b-ad8a-4e6e-a6d2-c083d25c820f")
     }
 }
+
+#if os(Linux)
+extension UUIDTests {
+	static var allTests : [(String, (UUIDTests) -> () throws -> Void)] {
+		return [
+			("testUUID", testUUID),
+		]
+	}
+}
+#endif
