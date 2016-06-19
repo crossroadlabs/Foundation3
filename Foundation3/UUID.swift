@@ -34,7 +34,7 @@ import Boilerplate
         
         public var uuid: uuid_t {
             get {
-                var temp = [UInt8](count: 16, repeatedValue: 0)
+                var temp = [UInt8](repeating: 0, count: 16)
                 self.getUUIDBytes(&temp)
                 return temp
             }
