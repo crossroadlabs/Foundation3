@@ -19,5 +19,5 @@ import PackageDescription
 let package = Package(
     name: "Foundation3",
     targets: [Target(name: "Foundation3")],
-    dependencies: [.Package(url: "https://github.com/crossroadlabs/Boilerplate.git", majorVersion: 0, minor: 1)]
+    dependencies: [.Package(url: "https://github.com/crossroadlabs/Boilerplate.git", majorVersion: 0, minor: 2)]
 )

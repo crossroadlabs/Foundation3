@@ -15,7 +15,7 @@ class Foundation3Tests: XCTestCase {
 
 #if os(Linux)
 extension Foundation3Tests {
-	static var allTests : [(String, Foundation3Tests -> () throws -> Void)] {
+	static var allTests : [(String, (Foundation3Tests) -> () throws -> Void)] {
 		return [
 		]
 	}
