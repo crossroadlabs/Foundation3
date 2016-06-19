@@ -3,5 +3,8 @@ import XCTest
 @testable import Foundation3TestSuite
 
 XCTMain([
-	testCase(Foundation3Tests.allTests),
+	testCase(BundleTests.allTests),
+	testCase(StringTests.allTests),
+	testCase(UUIDTests.allTests),
+	testCase(ConditionTests.allTests),
 ])

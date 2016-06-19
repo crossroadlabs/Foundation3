@@ -17,7 +17,7 @@
 import Foundation
 import Boilerplate
 
-#if swift(>=3.0)
+#if swift(>=3.0) && !os(Linux)
 #else
     
     public extension String {
@@ -106,75 +106,93 @@ import Boilerplate
             
             public static let utf32LittleEndian = String.Encoding(rawValue: NSUTF32LittleEndianStringEncoding)
         }
-        
-        public struct EncodingConversionOptions : OptionSet {
-            public let rawValue: UInt
-    
-            public init(rawValue: UInt) {
-                self.rawValue = rawValue
-            }
-    
-            public static let allowLossy = String.EncodingConversionOptions(rawValue: NSStringEncodingConversionOptions.AllowLossy.rawValue)
-    
-            public static let externalRepresentation = String.EncodingConversionOptions(rawValue: NSStringEncodingConversionOptions.ExternalRepresentation.rawValue)
-        }
-    
-        public struct EnumerationOptions : OptionSet {
-            public let rawValue: UInt
-    
-            public init(rawValue: UInt) {
-                self.rawValue = rawValue
-            }
-    
-            public static let byParagraphs = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.ByParagraphs.rawValue) // Equivalent to paragraphRangeForRange:
-    
-            public static let byComposedCharacterSequences =  String.EnumerationOptions(rawValue:NSStringEnumerationOptions.ByComposedCharacterSequences.rawValue) // Equivalent to rangeOfComposedCharacterSequencesForRange:
-    
-            public static let byWords = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.ByWords.rawValue)
-    
-            public static let bySentences = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.BySentences.rawValue)
-    
-            // ...and combine any of the desired additional options:
-            public static let reverse = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.Reverse.rawValue)
-    
-            public static let substringNotRequired = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.SubstringNotRequired.rawValue)
-    
-            public static let localized = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.Localized.rawValue) // User's default locale
-        }
-    
-        public struct CompareOptions : OptionSet {
-            public let rawValue: UInt
-    
-            public init(rawValue: UInt) {
-                self.rawValue = rawValue
-            }
-    
-            public static let caseInsensitiveSearch = String.CompareOptions(rawValue: NSStringCompareOptions.CaseInsensitiveSearch.rawValue)
-    
-            public static let literalSearch = String.CompareOptions(rawValue: NSStringCompareOptions.LiteralSearch.rawValue)
-    
-            public static let backwardsSearch = String.CompareOptions(rawValue: NSStringCompareOptions.BackwardsSearch.rawValue)
-    
-            public static let anchoredSearch = String.CompareOptions(rawValue: NSStringCompareOptions.AnchoredSearch.rawValue)
-    
-            public static let numericSearch = String.CompareOptions(rawValue: NSStringCompareOptions.NumericSearch.rawValue)
-    
-            public static let diacriticInsensitiveSearch = String.CompareOptions(rawValue: NSStringCompareOptions.DiacriticInsensitiveSearch.rawValue)
-    
-            public static let widthInsensitiveSearch = String.CompareOptions(rawValue: NSStringCompareOptions.WidthInsensitiveSearch.rawValue)
-    
-    
-            public static let forcedOrderingSearch = String.CompareOptions(rawValue: NSStringCompareOptions.ForcedOrderingSearch.rawValue)
-    
-            public static let regularExpressionSearch = String.CompareOptions(rawValue: NSStringCompareOptions.RegularExpressionSearch.rawValue)
-        }
     }
-    
-    public extension String {
-        /// Returns an `Data` object containing a representation of
-        /// the `String` encoded using a given encoding.
-        public func data(using encoding: String.Encoding, allowLossyConversion lossy: Bool = true) -> Data? {
-            return self.dataUsingEncoding(encoding.rawValue, allowLossyConversion: lossy)
+
+    #if os(Linux)
+        public extension String {
+            public typealias EncodingConversionOptions = NSStringEncodingConversionOptions
+            public typealias EnumerationOptions = NSStringEnumerationOptions
+            public typealias CompareOptions = NSStringCompareOptions
         }
-    }
+
+        public extension String {
+            /// Returns an `Data` object containing a representation of
+            /// the `String` encoded using a given encoding.
+            public func data(using encoding: String.Encoding, allowLossyConversion lossy: Bool = true) -> Data? {
+                return self.data(using: encoding.rawValue, allowLossyConversion: lossy)
+            }
+        }
+    #else
+        public extension String {
+            public struct EncodingConversionOptions : OptionSet {
+                public let rawValue: UInt
+
+                public init(rawValue: UInt) {
+                    self.rawValue = rawValue
+                }
+
+                public static let allowLossy = String.EncodingConversionOptions(rawValue: NSStringEncodingConversionOptions.AllowLossy.rawValue)
+
+                public static let externalRepresentation = String.EncodingConversionOptions(rawValue: NSStringEncodingConversionOptions.ExternalRepresentation.rawValue)
+            }
+
+            public struct EnumerationOptions : OptionSet {
+                public let rawValue: UInt
+
+                public init(rawValue: UInt) {
+                    self.rawValue = rawValue
+                }
+
+                public static let byParagraphs = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.ByParagraphs.rawValue) // Equivalent to paragraphRangeForRange:
+
+                public static let byComposedCharacterSequences =  String.EnumerationOptions(rawValue:NSStringEnumerationOptions.ByComposedCharacterSequences.rawValue) // Equivalent to rangeOfComposedCharacterSequencesForRange:
+
+                public static let byWords = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.ByWords.rawValue)
+
+                public static let bySentences = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.BySentences.rawValue)
+
+                // ...and combine any of the desired additional options:
+                public static let reverse = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.Reverse.rawValue)
+
+                public static let substringNotRequired = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.SubstringNotRequired.rawValue)
+
+                public static let localized = String.EnumerationOptions(rawValue: NSStringEnumerationOptions.Localized.rawValue) // User's default locale
+            }
+
+            public struct CompareOptions : OptionSet {
+                public let rawValue: UInt
+
+                public init(rawValue: UInt) {
+                    self.rawValue = rawValue
+                }
+
+                public static let caseInsensitiveSearch = String.CompareOptions(rawValue: NSStringCompareOptions.CaseInsensitiveSearch.rawValue)
+
+                public static let literalSearch = String.CompareOptions(rawValue: NSStringCompareOptions.LiteralSearch.rawValue)
+
+                public static let backwardsSearch = String.CompareOptions(rawValue: NSStringCompareOptions.BackwardsSearch.rawValue)
+
+                public static let anchoredSearch = String.CompareOptions(rawValue: NSStringCompareOptions.AnchoredSearch.rawValue)
+
+                public static let numericSearch = String.CompareOptions(rawValue: NSStringCompareOptions.NumericSearch.rawValue)
+
+                public static let diacriticInsensitiveSearch = String.CompareOptions(rawValue: NSStringCompareOptions.DiacriticInsensitiveSearch.rawValue)
+
+                public static let widthInsensitiveSearch = String.CompareOptions(rawValue: NSStringCompareOptions.WidthInsensitiveSearch.rawValue)
+
+
+                public static let forcedOrderingSearch = String.CompareOptions(rawValue: NSStringCompareOptions.ForcedOrderingSearch.rawValue)
+
+                public static let regularExpressionSearch = String.CompareOptions(rawValue: NSStringCompareOptions.RegularExpressionSearch.rawValue)
+            }
+        }
+
+        public extension String {
+            /// Returns an `Data` object containing a representation of
+            /// the `String` encoded using a given encoding.
+            public func data(using encoding: String.Encoding, allowLossyConversion lossy: Bool = true) -> Data? {
+                return self.dataUsingEncoding(encoding.rawValue, allowLossyConversion: lossy)
+            }
+        }
+    #endif
 #endif
