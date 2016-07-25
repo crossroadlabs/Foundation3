@@ -1,4 +1,4 @@
-//===--- Package.swift ----------------------------------------------------===//
+//===--- Date.swift -------------------------------------------------------===//
 //Copyright (c) 2016 Daniel Leping (dileping)
 //
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,10 +14,9 @@
 //limitations under the License.
 //===----------------------------------------------------------------------===//
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-    name: "Foundation3",
-    targets: [Target(name: "Foundation3")],
-    dependencies: [.Package(url: "https://github.com/crossroadlabs/Boilerplate.git", majorVersion: 0, minor: 2)]
-)
+#if swift(>=3.0) && !os(Linux)
+#else
+    public typealias Date = NSDate
+#endif

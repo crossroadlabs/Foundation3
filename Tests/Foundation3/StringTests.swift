@@ -1,4 +1,4 @@
-//===--- Package.swift ----------------------------------------------------===//
+//===--- StringTests.swift --------------------------------------------------===//
 //Copyright (c) 2016 Daniel Leping (dileping)
 //
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,10 +14,28 @@
 //limitations under the License.
 //===----------------------------------------------------------------------===//
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-    name: "Foundation3",
-    targets: [Target(name: "Foundation3")],
-    dependencies: [.Package(url: "https://github.com/crossroadlabs/Boilerplate.git", majorVersion: 0, minor: 2)]
-)
+import XCTest
+import Foundation
+import Foundation3
+
+class StringTests: XCTestCase {
+    
+    func testDataUsingEncoding() {
+        let data1 = "str".data(using: String.Encoding.ascii, allowLossyConversion: true)
+        let data2 = "str".data(using: String.Encoding.utf8)
+        XCTAssert(data1 == data2)
+    }
+    
+}
+
+#if os(Linux)
+extension StringTests {
+	static var allTests : [(String, (StringTests) -> () throws -> Void)] {
+		return [
+			("testDataUsingEncoding", testDataUsingEncoding),
+		]
+	}
+}
+#endif

@@ -1,4 +1,4 @@
-//===--- NSCondition.swift -----------------------------------------------------===//
+//===--- ConditionTests.swift ----------------------------------------------===//
 //Copyright (c) 2016 Daniel Leping (dileping)
 //
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,11 +16,26 @@
 
 import Foundation
 
-#if swift(>=3.0) && !os(Linux)
-#else
-    public extension NSCondition {
-        public func wait(until limit: NSDate) -> Bool {
-            return self.waitUntilDate(limit)
-        }
+import XCTest
+import Foundation
+import Foundation3
+
+class ConditionTests: XCTestCase {
+    
+    func testWait() {
+        let cond = Condition()
+        cond.signal()
+        let _ = cond.wait(until: Date())
     }
+    
+}
+
+#if os(Linux)
+extension ConditionTests {
+	static var allTests : [(String, (ConditionTests) -> () throws -> Void)] {
+		return [
+			("testWait", testWait),
+		]
+	}
+}
 #endif
